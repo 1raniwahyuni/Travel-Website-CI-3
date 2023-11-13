@@ -1,4 +1,4 @@
- <div class="navbar-default sidebar" role="navigation">
+<div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
@@ -23,13 +23,13 @@
                                 <a href="#"><i class="fa fa-server"></i> Konten <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="panels-wells.html">Isi Konten</a>
+                                        <a href="<?= base_url('konten')?>">Isi Konten</a>
                                     </li>
                                     <li>
                                         <a href="buttons.html">Artikel</a>
                                     </li>
                                     <li>
-                                        <a href="notifications.html">Coming Soon</a>
+                                        <a href="<?= base_url('coming')?>">Coming Soon</a>
                                     </li>
                                     <li>
                                         <a href="typography.html">Gallery</a>
