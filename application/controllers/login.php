@@ -13,10 +13,8 @@ class Login extends CI_Controller {
             $login_result = $this->user_login->login($username, $password);
 
             if ($login_result) {
-                // Jika login berhasil, lakukan redirect atau tindakan lain yang sesuai
-                redirect('dashboard'); // Ganti 'dashboard' dengan halaman tujuan setelah login
+                redirect('dashboard');
             } else {
-                // Jika login gagal, atur pesan kesalahan atau tindakan lain yang sesuai
                 $this->session->set_flashdata('pesan', 'Username atau password salah.');
             }
         }

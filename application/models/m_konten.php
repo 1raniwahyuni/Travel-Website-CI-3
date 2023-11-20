@@ -1,10 +1,10 @@
 <?php
 class M_konten extends CI_Model {
 
-
     public function lists() {
         $this->db->select('*');
         $this->db->from('konten');
+        $this->db->join('penulis', 'penulis.id_penulis = konten.id_penulis', 'left' );
         $this->db->order_by('id_konten', 'desc');
         return $this->db->get()->result(); 
     }

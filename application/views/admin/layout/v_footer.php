@@ -25,6 +25,17 @@
         <!-- Custom Theme JavaScript -->
         <script src="<?= base_url()?>template/back-end/js/startmin.js"></script>
 
+<!-- datepicker -->
+        <script src="<?= base_url()?>datepicker/js/bootstrap-transition.js"></script>
+        <script src="<?= base_url()?>datepicker/js/bootstrap-datepicker.js"></script>
+        <script>
+		$(function(){
+		    $("#tanggal").datepicker({
+			format:'yyyy-mm/dd'
+		    });
+                });
+	    </script>
+
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
             $(document).ready(function() {
@@ -32,6 +43,6 @@
                     {responsive: true});
                 });
         </script>
-
+        
     </body>
 </html>

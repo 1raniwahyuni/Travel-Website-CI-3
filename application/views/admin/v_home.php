@@ -1,1 +1,1 @@
-<h1>Ini Halaman Home Admin</h1>
+<h1>Hai, Ini Halaman Home Admin</h1>

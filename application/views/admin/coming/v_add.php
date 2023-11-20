@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group">
                     <label>Jadwal Upload</label>
-                    <input class="form-control" type="text" name="jadwal_upload" placeholder="Masukkan Jadwal Upload Konten" required>
+                    <input class="form-control" type="text" name="jadwal_upload" id="tanggal" placeholder="Masukkan Jadwal Upload Konten" required>
                 </div>
                 <div class="form-group">
                     <label>Penulis</label>
