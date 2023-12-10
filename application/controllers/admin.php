@@ -4,7 +4,7 @@ class Admin extends CI_Controller{
     {
         $data = array(
             'title'     => 'Tourist View',
-            'title2'    => 'Dashboard',
+            'title2'    => 'Dashboard Admin',
             'isi'       => 'admin/v_home'
         );
         $this->load->view('admin/layout/v_wrapper',$data,FALSE);

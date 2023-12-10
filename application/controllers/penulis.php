@@ -62,7 +62,7 @@ class penulis extends CI_Controller{
         $data['detail_penulis'] = $this->m_penulis->getDetailById($id_penulis);
 
         $data = array(
-            'title2' => 'Detail penulis',
+            'title2' => 'Detail Penulis',
             'detail_penulis' => $data['detail_penulis'],
             'isi' => 'admin/v_detail_penulis'
         );

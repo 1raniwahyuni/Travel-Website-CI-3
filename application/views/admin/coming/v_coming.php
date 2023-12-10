@@ -21,9 +21,9 @@
                     <tr>
                         <th>No</th>
                         <th>Judul Konten</th>
-                        <th>Deskripsi Konten</th>
+                        <th>Jenis Konten</th>
                         <th>Jadwal Upload</th>
-                        <th>Penulis</th>
+                        <th>Nama Penulis</th>
                         <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
@@ -35,10 +35,11 @@
                     <tr style="text-align: justify;">
                         <td><?= $no++; ?></td>
                         <td><?= $value->judul_coming?></td>
-                        <td><?= $value->deskripsi?></td>
+                        <td><?= $value->jenis_konten?></td>
                         <td><?= $value->jadwal_upload?></td>
-                        <td><?= $value->penulis?></td>
-                        <td class="text-center"><img src="<?= base_url('gambar_coming/' .$value->gambar_coming) ?>" width="120px"></td>
+                        <td><?= $value->nama_penulis?></td>
+                        <td class="text-center"><img src="<?= base_url('foto/gambar_coming/' .$value->gambar_coming) ?>" width="120px"></td>
+                        
                         <td style="text-align: center;">
                             <a class="btn btn-sm btn-primary" href="<?= base_url('coming/detail/' . $value->id_coming) ?>">
                                 <i class="fa fa-search-plus"></i>

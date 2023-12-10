@@ -13,6 +13,7 @@ class Login extends CI_Controller {
             $login_result = $this->user_login->login($username, $password);
 
             if ($login_result) {
+                $this->session->set_userdata('username', $username);
                 redirect('dashboard');
             } else {
                 $this->session->set_flashdata('pesan', 'Username atau password salah.');
@@ -25,6 +26,6 @@ class Login extends CI_Controller {
 
     public function logout() {
         $this->user_login->logout();
-        redirect('login'); // Ganti 'login' dengan halaman login atau halaman lain yang sesuai
+        redirect('login');
     }
 }

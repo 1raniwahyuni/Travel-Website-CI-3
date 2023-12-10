@@ -22,10 +22,10 @@
         <link href="<?= base_url()?>template/back-end/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
         <!-- DataTables Responsive CSS -->
         <link href="<?= base_url()?>template/back-end/css/dataTables/dataTables.responsive.css" rel="stylesheet">
-        
 
-        <style>
-		.datepicker{z-index:1151;}
-	    </style>
 
+        <script src="<?= base_url() ?>ckeditor/ckeditor.js"></script>
+		<script src="<?= base_url() ?>ckeditor/samples/js/sample.js"></script>
+		<link rel="stylesheet" href="<?= base_url() ?>ckeditor/sample/css/samples.css">
+		<link rel="stylesheet" href="<?= base_url() ?>ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
     </head>

@@ -5,6 +5,7 @@ class Coming extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('m_coming');
+        $this->load->model('m_penulis');
     }
 
     public function index()
@@ -20,14 +21,14 @@ class Coming extends CI_Controller{
     public function add()
     {
         $this->form_validation->set_rules('judul_coming', 'Judul Konten', 'required');
-        $this->form_validation->set_rules('deskripsi', 'Deskripsi Konten', 'required');
+        $this->form_validation->set_rules('jenis_konten', 'Jenis Konten', 'required');
         $this->form_validation->set_rules('jadwal_upload', 'Jadwal Upload', 'required');
-        $this->form_validation->set_rules('penulis', 'Penulis', 'required');
+        $this->form_validation->set_rules('id_penulis', 'Nama Penulis', 'required');
         
         if ($this->form_validation->run() == TRUE) {
-            $config['upload_path'] = './gambar_coming/';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = '2000';
+            $config['upload_path']      = 'foto/gambar_coming/';
+            $config['allowed_types']    = 'gif|jpg|png|jpeg';
+            $config['max_size']         = '2000';
             $this->upload->initialize($config);
                 if (!$this->upload->do_upload('gambar_coming'))
                 {
@@ -43,40 +44,41 @@ class Coming extends CI_Controller{
                 {
                     $upload_data = array('uploads' => $this->upload->data());
                     $config['image_library'] = 'gd2' ;
-                    $config['source_image']  = './gambar_coming/'.$upload_data['uploads']['file_name'];
+                    $config['source_image']  = 'foto/gambar_coming/'.$upload_data['uploads']['file_name'];
                     $this->load->library('image_lib', $config);
 
                     $data = array(
                         'judul_coming'  => $this->input->post('judul_coming'),
-                        'deskripsi'     => $this->input->post('deskripsi'),
+                        'jenis_konten'     => $this->input->post('jenis_konten'),
                         'jadwal_upload' => $this->input->post('jadwal_upload'),
-                        'penulis'       => $this->input->post('penulis'),
+                        'id_penulis'       => $this->input->post('id_penulis'),
                         'gambar_coming' => $upload_data['uploads']['file_name']  
                         );
                     $this->m_coming->add($data);
                     $this->session->set_flashdata('pesan', 'Data Berhasil Di Tambahkan');
                     redirect('coming');
                 }
-        } 
+        }
                 $data = array(
                     'title2' => 'Tambah Konten Coming Soon',
-                    'coming' => $this->m_coming->lists(),
+                    // 'coming' => $this->m_coming->lists(),
+                    'penulis' =>  $this->m_penulis->lists(),
                     'isi' => 'admin/coming/v_add'
                 );
                 $this->load->view('admin/layout/v_wrapper', $data, FALSE);
     }
-// EDIT EDIT
+    
+    // EDIT EDIT
     public function edit($id_coming)
     {
         $this->form_validation->set_rules('judul_coming', 'Judul Konten', 'required');
-        $this->form_validation->set_rules('deskripsi', 'Deskripsi Konten', 'required');
+        $this->form_validation->set_rules('jenis_konten', 'Jenis Konten', 'required');
         $this->form_validation->set_rules('jadwal_upload', 'Jadwal Upload', 'required');
-        $this->form_validation->set_rules('penulis', 'Penulis', 'required');
-        // $this->form_validation->set_rules('gambar_coming', 'Foto Konten', 'required');
-        
+        $this->form_validation->set_rules('id_penulis', 'Nama Penulis', 'required');
+
         if ($this->form_validation->run() == TRUE) {
-            $config['upload_path'] = './gambar_coming/';
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['upload_path'] = 'foto/gambar_coming/';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '2000';
             $this->upload->initialize($config);
                 if (!$this->upload->do_upload('gambar_coming'))
@@ -84,8 +86,8 @@ class Coming extends CI_Controller{
                     $data = array(
                         'title2'   => 'Edit Konten Coming Soon',
                         'error'     => $this->upload->display_errors(),
-                        'coming2' => $this->m_coming->detail_edit($id_coming),
-                        'coming'    => $this->m_coming->lists(),
+                        'coming' => $this->m_coming->detail_edit($id_coming),
+                        'penulis' =>  $this->m_penulis->lists(),
                         'isi'       => 'admin/coming/v_edit'
                     );
                     $this->load->view('admin/layout/v_wrapper',$data,FALSE);
@@ -94,22 +96,22 @@ class Coming extends CI_Controller{
                 {
                     $upload_data = array('uploads' => $this->upload->data());
                     $config['image_library'] = 'gd2' ;
-                    $config['source_image']  = './gambar_coming/'.$upload_data['uploads']['file_name'];
+                    $config['source_image']  = 'foto/gambar_coming/'.$upload_data['uploads']['file_name'];
                     $this->load->library('image_lib', $config);
                     
                     // agar tdk memenuhi file foto / menghapus file foto lama
-                    $coming2 = $this->m_coming->detail_edit($id_coming);
-                    if ($coming2->gambar_coming != "") {
-                        unlink('./gambar_coming/' . $coming2->gambar_coming);
+                    $coming = $this->m_coming->detail_edit($id_coming);
+                    if ($coming->gambar_coming != "") {
+                        unlink('foto/gambar_coming/' . $coming->gambar_coming);
                     }
                     // end menghapus foto
                     
                     $data = array(
                         'id_coming'     =>$id_coming,
                         'judul_coming'  => $this->input->post('judul_coming'),
-                        'deskripsi'     => $this->input->post('deskripsi'),
+                        'jenis_konten'     => $this->input->post('jenis_konten'),
                         'jadwal_upload' => $this->input->post('jadwal_upload'),
-                        'penulis'       => $this->input->post('penulis'),
+                        'id_penulis'       => $this->input->post('id_penulis'),
                         'gambar_coming' => $upload_data['uploads']['file_name']  
                         );
                     $this->m_coming->edit($data);
@@ -117,18 +119,19 @@ class Coming extends CI_Controller{
                     redirect('coming');
                 }
 
+                // JIKA TIDAK UPLOAD FOTO
                 // jika tidak mengupload foto, maka pada array, var gambar bs dihapus
                 $upload_data = array('uploads' => $this->upload->data());
                     $config['image_library'] = 'gd2' ;
-                    $config['source_image']  = './gambar_coming/'.$upload_data['uploads']['file_name'];
+                    $config['source_image']  = 'foto/gambar_coming/'.$upload_data['uploads']['file_name'];
                     $this->load->library('image_lib', $config);
-
+                    
                     $data = array(
                         'id_coming'     =>$id_coming,
                         'judul_coming'  => $this->input->post('judul_coming'),
-                        'deskripsi'     => $this->input->post('deskripsi'),
+                        'jenis_konten'     => $this->input->post('jenis_konten'),
                         'jadwal_upload' => $this->input->post('jadwal_upload'),
-                        'penulis'       => $this->input->post('penulis'),
+                        'id_penulis'       => $this->input->post('id_penulis'), 
                         );
                     $this->m_coming->edit($data);
                     $this->session->set_flashdata('pesan', 'Data Berhasil Di Perbarui');
@@ -136,19 +139,21 @@ class Coming extends CI_Controller{
         } 
         $data = array(
             'title2' => 'Edit Konten Coming Soon',
-            'coming' => $this->m_coming->lists(),
-            'coming2' => $this->m_coming->detail_edit($id_coming),
+            'penulis' =>  $this->m_penulis->lists(),
+            'coming' => $this->m_coming->detail_edit($id_coming),
             'isi' => 'admin/coming/v_edit'
         );
         $this->load->view('admin/layout/v_wrapper', $data, FALSE);
     }
 
+
+    // DELETE
     public function delete($id_coming)
     {
         //menghapus file foto lama saat kita delete file agar foto ikut terhapus jugax
-         $coming2 = $this->m_coming->detail_edit($id_coming);
-        if ($coming2->gambar_coming != "") {
-        unlink('./gambar_coming/' . $coming2->gambar_coming);
+         $coming = $this->m_coming->detail_edit($id_coming);
+        if ($coming->gambar_coming != "") {
+        unlink('foto/gambar_coming/' . $coming->gambar_coming);
         }
 
         $data = array('id_coming' => $id_coming);

@@ -10,7 +10,6 @@
                         </button>
                     </span>
                 </div>
-                <!-- /input-group -->
             </li>
                             <li>
                                 <a href="<?= base_url('admin')?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
@@ -23,9 +22,6 @@
                                     <li>
                                         <a href="<?= base_url('penulis')?>"> Penulis</a>
                                     </li>
-                                    <li>
-                                    <a href="<?= base_url('anggota')?>"> Anggota</a>
-                                    </li>
                                 </ul>
                             </li>
                             
@@ -36,7 +32,7 @@
                                         <a href="<?= base_url('konten')?>">Isi Konten</a>
                                     </li>
                                     <li>
-                                        <a href="buttons.html">Artikel</a>
+                                        <a href="<?= base_url('artikel')?>">Artikel</a>
                                     </li>
                                     <li>
                                         <a href="<?= base_url('coming')?>">Coming Soon</a>
@@ -50,7 +46,10 @@
                                 <a href="#"><i class="fa fa-shopping-bag"></i> Shop <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="#">Merchandise</a>
+                                    <a href="<?= base_url('merchandise')?>">Merchandise</a>
+                                    </li>
+                                    <li>
+                                    <a href="<?= base_url('paket')?>">Paket Wisata</a>
                                     </li>
                                 </ul>
                             </li>

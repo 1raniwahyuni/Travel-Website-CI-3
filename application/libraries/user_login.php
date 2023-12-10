@@ -14,11 +14,13 @@ class User_login
     {
         $cek = $this->ci->m_login->login($username, $password);
         if ($cek) {
+            $id_penulis = $cek->id_penulis;
             $username = $cek->username;
             $nama_user = $cek->nama_user;
             $level = $cek->level;
 
             // Buat session
+            $this->ci->session->set_userdata('id_penulis ', $id_penulis);
             $this->ci->session->set_userdata('username', $username);
             $this->ci->session->set_userdata('nama_user', $nama_user);
             $this->ci->session->set_userdata('level', $level);
@@ -40,6 +42,7 @@ class User_login
 
     public function logout()
     {
+        $this->ci->session->unset_userdata('id_penulis');
         $this->ci->session->unset_userdata('username');
         $this->ci->session->unset_userdata('nama_user');
         $this->ci->session->unset_userdata('level');
