@@ -5,11 +5,6 @@
         <div class="panel-body">
 
             <?php
-            if(isset($error_upload)){
-                echo '<div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times; </button>' .$error_upload.'</div>';
-            }
-
             //Form isi konten harus diisi 
             echo validation_errors('<div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times; </button>','</div>');

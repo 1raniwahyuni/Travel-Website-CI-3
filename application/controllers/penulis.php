@@ -1,7 +1,6 @@
 <?php
 
 class penulis extends CI_Controller{
-    // memanggil data dgn construct 
     public function __construct()
     {
         parent::__construct();

@@ -64,7 +64,7 @@ class M_Home extends CI_Model{
 		$this->db->where('id_konten', $id_konten);		
 		return $this->db->get()->row();		
 	}
-	// untuk bagian home itu dipish yaa
+	// untuk bagian home itu dipish yaa. ini untuk home
 	public function latest_konten()
 	{
 		$this->db->select('*');
@@ -208,6 +208,4 @@ class M_Home extends CI_Model{
 		return $this->db->get()->row();
 	}
 }
-
-
 /* End of file M_home.php */

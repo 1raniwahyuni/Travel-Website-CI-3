@@ -4,6 +4,7 @@ class M_Paket extends CI_Model{
     {
         $this->db->select('*');
         $this->db->from('paket');
+        $this->db->join('kategori', 'kategori.id_kategori = paket.id_kategori', 'left');
         $this->db->order_by('id_paket','desc');
         return $this->db->get()->result();
     }
@@ -13,6 +14,7 @@ class M_Paket extends CI_Model{
    {
        $this->db->select('*');
        $this->db->from('paket');
+       $this->db->join('kategori', 'kategori.id_kategori = paket.id_kategori', 'left');
        $this->db->where('id_paket', $id_paket);
        return $this->db->get()->row();
    }
@@ -38,7 +40,8 @@ class M_Paket extends CI_Model{
    // detail semua
    public function getDetailById($id_paket)
    {
-       return $this->db->get_where('paket', array('id_paket' => $id_paket))->row();
+    $this->db->join('kategori', 'kategori.id_kategori = paket.id_kategori', 'left');
+    return $this->db->get_where('paket', array('id_paket' => $id_paket))->row();
    }
 
 }

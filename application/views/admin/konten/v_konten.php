@@ -35,7 +35,7 @@
                         <td><?= $value->judul_konten?></td> 
                         <td><?= $value->nama_penulis?></td>
                         <td><?= $value->jenis_konten?></td>
-                        <td><img src="<?= base_url('foto/gambar_konten/' . $value->gambar_konten) ?>" width="150px"></td>
+                        <td style="text-align: center;"><img src="<?= base_url('foto/gambar_konten/' . $value->gambar_konten) ?>" width="150px"></td>
                         
                         <!-- aksi -->
                         <td style="text-align: center;">

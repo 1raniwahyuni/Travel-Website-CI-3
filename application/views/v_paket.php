@@ -53,7 +53,6 @@
         </div>
     </div>
 
-
     <div class="newsletter">
         <div class="newsletter_background" style="background-image:url(<?= base_url()?>template/front-end/images/newsletter.jpg)"></div>
         <div class="container">

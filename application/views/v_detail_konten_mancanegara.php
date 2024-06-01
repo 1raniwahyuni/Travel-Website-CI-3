@@ -36,7 +36,7 @@
                         <div class="isi-konten text-justify">
                             <p><?= $konten_mancanegara->isi_konten ?></p>
                         </div>
-                    <<div class="back_button_container text-center">
+                    <div class="back_button_container text-center">
                             <a href="<?= base_url('home/konten_mancanegara') ?>" class="btn btn-primary mx-auto">Back to Konten Mancanegara</a>
                         </div>
                     </div>
@@ -45,8 +45,6 @@
         </div>
     </div>
 <div class="newsletter">
-		<!-- <div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="<?= base_url()?>template/front-end/images/newsletter.jpg" data-speed="0.8"></div>
-     -->
      <div class="newsletter_background" style="background-image:url(<?= base_url()?>template/front-end/images/newsletter.jpg)"></div>
 		<div class="container">
 			<div class="row">

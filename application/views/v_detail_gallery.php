@@ -1,5 +1,3 @@
-	<!-- Home -->
-
 	<div class="home">
 		<div class="breadcrumbs_container">
 			<div class="container">
@@ -16,10 +14,6 @@
 			</div>
 		</div>			
 	</div>
-
-
-
-
 
 	<div class="about">
 		<div class="container">
@@ -47,11 +41,6 @@
                 </div>
 		</div>
 	</div>
-
-
-
-
-
 
 	<div class="newsletter">
 		<div class="newsletter_background" style="background-image:url(<?= base_url() ?>template/front-end/images/newsletter_background.jpg)"></div>

@@ -45,8 +45,6 @@
         </div>
     </div>
 <div class="newsletter">
-		<!-- <div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="<?= base_url()?>template/front-end/images/newsletter.jpg" data-speed="0.8"></div>
-     -->
      <div class="newsletter_background" style="background-image:url(<?= base_url()?>template/front-end/images/newsletter.jpg)"></div>
 		<div class="container">
 			<div class="row">

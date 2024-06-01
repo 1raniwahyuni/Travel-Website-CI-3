@@ -8,7 +8,7 @@ class M_Gallery extends CI_Model{
         $this->db->select('gallery.*,count(foto.id_gallery) as jml_foto');
         $this->db->from('gallery');
         $this->db->join('foto', 'foto.id_gallery = gallery.id_gallery', 'left');
-        // grup, krn kalo tidak dia akan menjumlahkan semua data yg adda (?)
+        // grup, krn kalo tidak dia akan menjumlahkan semua data yg ada
         $this->db->group_by('gallery.id_gallery');
         $this->db->order_by('gallery.id_gallery', 'desc');
         return $this->db->get()->result();
@@ -23,7 +23,6 @@ class M_Gallery extends CI_Model{
         $this->db->order_by('id_foto', 'desc');
         return $this->db->get()->result();
     }
-
 
     // add untuk ke database
     public function add($data)
@@ -51,7 +50,6 @@ class M_Gallery extends CI_Model{
         $this->db->where('id_gallery', $id_gallery);
         return $this->db->get()->row();
     }
-
 
     // detail untuk foto
     public function detail_foto($id_foto)

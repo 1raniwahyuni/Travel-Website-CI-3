@@ -73,7 +73,6 @@
                             <textarea name="isi_konten" id="editor" required><?= $konten->isi_konten ?></textarea>
                         </div>
                     </div>
-                <!-- ini misal kalo ga ganti foto, jadi required nya dihapus -->
                
 
                 <div class="col-md-12">

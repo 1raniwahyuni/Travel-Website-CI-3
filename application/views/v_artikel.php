@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="courses_search_container text-center"> <!-- Tambahkan class text-center di sini -->
+                <div class="courses_search_container text-center">
                     <h2>Artikel Menarik Seputar Wisata</h2>
                 </div>
                 <style>
@@ -27,7 +27,7 @@
                         margin-bottom: 50px;
                     }
                 </style>
-                    <div class="row events_row justify-content-center"> <!-- Tambahkan class justify-content-center di sini -->
+                    <div class="row events_row justify-content-center"> 
                         <?php foreach ($artikel as $key => $value) { ?>
                             <div class="col-lg-4 events_col">
                                 <div class="course">
@@ -70,8 +70,6 @@
     </div>
 </div>
 <div class="newsletter">
-		<!-- <div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="<?= base_url()?>template/front-end/images/newsletter.jpg" data-speed="0.8"></div>
-     -->
      <div class="newsletter_background" style="background-image:url(<?= base_url()?>template/front-end/images/newsletter.jpg)"></div>
 		<div class="container">
 			<div class="row">

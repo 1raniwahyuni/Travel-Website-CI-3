@@ -2,7 +2,7 @@
     <style>
         .col-lg-10 {
             margin: 0 auto;
-            float: none; /* Clear the float */
+            float: none;
         }
     </style>
 
@@ -34,12 +34,12 @@
             
             <style>
                 .form-group.text-justify {
-                    line-height: 1.5;      /* Tinggi baris */
-                    letter-spacing: 1px;   /* Jarak antarhuruf */
-                    word-spacing: 2px;     /* Jarak antarkata */
-                    text-align: justify;   /* Perataan teks */
+                    line-height: 1.5;     
+                    letter-spacing: 1px;   
+                    word-spacing: 2px;    
+                    text-align: justify;   
                     text-align-last: left; 
-                    font-size: 15px;       /* Ukuran font */
+                    font-size: 15px;      
 
                 }
             </style>

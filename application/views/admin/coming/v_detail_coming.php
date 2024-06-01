@@ -2,7 +2,7 @@
     <style>
         .col-lg-8 {
             margin: 0 auto;
-            float: none; /* Clear the float */
+            float: none;
         }
     </style>
 <div class="panel panel-primary " class="text-nowrap">
@@ -33,11 +33,11 @@
             </div>
             <style>
                     .form-group.text-center {
-                        line-height: 1.5;      /* Tinggi baris */
-                        letter-spacing: 0.5px;   /* Jarak antarhuruf */
-                        word-spacing: 2px;     /* Jarak antarkata */
-                        text-align: center;   /* Perataan teks */
-                        font-size: 15px;       /* Ukuran font */
+                        line-height: 1.5;    
+                        letter-spacing: 0.5px;  
+                        word-spacing: 2px;   
+                        text-align: center; 
+                        font-size: 15px;     
 
                     }
                 </style>

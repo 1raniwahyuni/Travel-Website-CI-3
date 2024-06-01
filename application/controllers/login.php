@@ -9,7 +9,6 @@ class Login extends CI_Controller {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
 
-            // Selanjutnya, lakukan pengolahan login seperti yang Anda butuhkan
             $login_result = $this->user_login->login($username, $password);
 
             if ($login_result) {
